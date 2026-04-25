@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mettle Fitness Club UK — Stronger. Together. Every Day.</title>
+  <meta name="description" content="Outdoor strength & wellness for women 40+. Mettle Fitness Club UK is a supportive community in Solihull helping women build strength, energy and confidence through perimenopause, menopause and beyond." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --forest:  #3C4A3A;
+      --sage:    #6B7C5A;
+      --mist:    #A8B59A;
+      --blush:   #E7A28F;
+      --cream:   #F5F3EC;
+      --white:   #ffffff;
+      --text:    #2e2e2e;
+      --text-light: #5a5a5a;
+
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body:    'Montserrat', sans-serif;
+      --font-script:  'Great Vibes', cursive;
+
+      --radius: 4px;
+      --transition: 0.3s ease;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--cream); line-height: 1.7; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── Utility ── */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      color: var(--forest);
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--blush);
+    }
+    .script { font-family: var(--font-script); font-size: 1.6em; color: var(--blush); }
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--blush);
+      margin: 16px 0 24px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 2px;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+    }
+    .btn-primary {
+      background: var(--blush);
+      color: var(--white);
+      border-color: var(--blush);
+    }
+    .btn-primary:hover { background: #d4896f; border-color: #d4896f; }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .btn-outline:hover { background: var(--white); color: var(--forest); }
+    .btn-forest {
+      background: var(--forest);
+      color: var(--white);
+      border-color: var(--forest);
+    }
+    .btn-forest:hover { background: #2a3528; border-color: #2a3528; }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(245, 243, 236, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(60,74,58,0.1);
+      transition: var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo .logo-mark {
+      width: 44px;
+      height: 44px;
+      border: 2px solid var(--blush);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--forest);
+      position: relative;
+    }
+    .nav-logo .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .nav-logo .logo-text .brand {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--forest);
+    }
+    .nav-logo .logo-text .sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--forest);
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--blush); }
+    .nav-links .btn { margin-left: 8px; }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--forest);
+      transition: var(--transition);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--forest) 0%, #2a3528 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: radial-gradient(circle at 25% 25%, var(--white) 1px, transparent 1px),
+                        radial-gradient(circle at 75% 75%, var(--white) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 64px 80px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(231,162,143,0.2);
+      border: 1px solid rgba(231,162,143,0.4);
+      border-radius: 100px;
+      padding: 6px 16px;
+      margin-bottom: 32px;
+      width: fit-content;
+    }
+    .hero-badge span {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blush);
+    }
+    .hero-badge .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--blush);
+    }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 5.5vw, 5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .hero h1 em {
+      display: block;
+      font-style: italic;
+      color: var(--blush);
+      font-family: var(--font-script);
+      font-weight: 400;
+      font-size: 0.7em;
+      line-height: 1.3;
+    }
+    .hero-sub {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mist);
+      margin-top: 16px;
+      margin-bottom: 40px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-tagline {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image-inner {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--forest) 0%, transparent 30%),
+                  url('https://images.unsplash.com/photo-1518310383802-640c2de311b6?w=900&q=80&fit=crop') center/cover no-repeat;
+    }
+    .hero-image-badge {
+      position: absolute;
+      bottom: 48px;
+      right: 48px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(60,74,58,0.9);
+      border: 2px solid var(--blush);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 4px;
+      z-index: 3;
+    }
+    .hero-image-badge span {
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .hero-image-badge .heart { color: var(--blush); font-size: 0.8rem; }
+
+    /* ── Stats strip ── */
+    .stats-strip {
+      background: var(--white);
+      border-bottom: 1px solid rgba(60,74,58,0.08);
+    }
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      divide-x: 1px solid rgba(60,74,58,0.1);
+    }
+    .stat-item {
+      padding: 32px 24px;
+      text-align: center;
+      border-right: 1px solid rgba(60,74,58,0.08);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: 8px;
+    }
+
+    /* ── About ── */
+    .about {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-images {
+      position: relative;
+    }
+    .about-img-main {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 2px;
+      background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80&fit=crop') center/cover;
+    }
+    .about-img-accent {
+      position: absolute;
+      bottom: -32px;
+      right: -32px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 2px;
+      border: 8px solid var(--cream);
+      background: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=80&fit=crop') center/cover;
+    }
+    .leaf-deco {
+      position: absolute;
+      top: -24px;
+      left: -24px;
+      width: 80px;
+      opacity: 0.15;
+    }
+    .about-text p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .about-quote {
+      font-family: var(--font-script);
+      font-size: 1.8rem;
+      color: var(--blush);
+      margin: 32px 0 8px;
+      line-height: 1.3;
+    }
+    .about-cta-text {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--forest);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .values-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .value-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--forest);
+    }
+    .value-chip .heart { color: var(--blush); }
+
+    /* ── Offer ── */
+    .offer {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .offer-header { text-align: center; margin-bottom: 64px; }
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .offer-card {
+      background: var(--cream);
+      border: 1px solid rgba(60,74,58,0.1);
+      border-radius: var(--radius);
+      padding: 40px 36px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+    .offer-card:hover {
+      box-shadow: 0 12px 40px rgba(60,74,58,0.1);
+      transform: translateY(-4px);
+    }
+    .offer-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.4rem;
+    }
+    .offer-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .offer-card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── Values ── */
+    .values {
+      padding: 100px 0;
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+    }
+    .values::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(107,124,90,0.3) 0%, transparent 60%);
+    }
+    .values-header { text-align: center; margin-bottom: 64px; position: relative; }
+    .values-header .section-title { color: var(--white); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      position: relative;
+    }
+    .value-card {
+      text-align: center;
+      padding: 40px 24px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      transition: background var(--transition);
+    }
+    .value-card:hover { background: rgba(255,255,255,0.06); }
+    .value-heart {
+      font-size: 2rem;
+      color: var(--blush);
+      margin-bottom: 20px;
+    }
+    .value-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .value-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    /* ── Founding Members ── */
+    .founding {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+    .founding-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .founding-content {}
+    .founding-offer-box {
+      background: var(--forest);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .founding-offer-box::before {
+      content: 'OFFER';
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+    }
+    .founding-script {
+      font-family: var(--font-script);
+      font-size: 2rem;
+      color: var(--blush);
+      margin-bottom: -8px;
+    }
+    .founding-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 0.9;
+      margin-bottom: 24px;
+    }
+    .founding-badge {
+      display: inline-block;
+      background: var(--blush);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+    }
+    .founding-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .founding-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .check-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.65rem;
+      color: var(--white);
+    }
+    .founding-cta-text {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-top: 24px;
+      text-align: center;
+    }
+    .founding-image {
+      height: 500px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=700&q=80&fit=crop') center/cover;
+      position: relative;
+    }
+    .founding-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(60,74,58,0.7) 0%, transparent 60%);
+    }
+    .founding-image-text {
+      position: absolute;
+      bottom: 32px;
+      left: 32px;
+      right: 32px;
+    }
+    .founding-image-text p {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .founding-image-text em {
+      font-family: var(--font-script);
+      font-size: 1.3rem;
+      color: var(--blush);
+    }
+
+    /* ── Testimonials ── */
+    .testimonials {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .testimonials-header { text-align: center; margin-bottom: 64px; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      position: relative;
+      border: 1px solid rgba(60,74,58,0.08);
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      color: var(--blush);
+      opacity: 0.3;
+      position: absolute;
+      top: 8px;
+      left: 24px;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--forest);
+    }
+    .testimonial-detail {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .stars { color: var(--blush); font-size: 0.8rem; margin-bottom: 16px; }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 100px 0;
+      background: var(--cream);
+    }
+    .faq-header { text-align: center; margin-bottom: 64px; }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid rgba(60,74,58,0.1);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      cursor: pointer;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question h4 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: var(--forest);
+      line-height: 1.4;
+    }
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--mist);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      color: var(--blush);
+      transition: transform var(--transition);
+    }
+    .faq-answer {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-top: 16px;
+      display: none;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+    /* ── CTA Banner ── */
+    .cta-banner {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--forest) 0%, #1e2b1c 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.05;
+      background-image: radial-gradient(circle at 20% 50%, var(--white) 1px, transparent 1px),
+                        radial-gradient(circle at 80% 50%, var(--white) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .cta-banner-inner { position: relative; }
+    .cta-banner .script { font-size: 2.5rem; margin-bottom: 8px; }
+    .cta-banner h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .cta-banner p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-banner-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Contact ── */
+    .contact {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--forest);
+      margin-bottom: 16px;
+    }
+    .contact-info p {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      margin-bottom: 40px;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--cream);
+      border: 1px solid rgba(60,74,58,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-text .label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 4px;
+    }
+    .contact-item-text a,
+    .contact-item-text span {
+      font-size: 0.88rem;
+      color: var(--forest);
+      font-weight: 500;
+    }
+    .social-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border: 1px solid rgba(60,74,58,0.15);
+      border-radius: 2px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--forest);
+      transition: var(--transition);
+    }
+    .social-btn:hover { background: var(--cream); border-color: var(--blush); color: var(--blush); }
+    .contact-form {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      border: 1px solid rgba(60,74,58,0.08);
+    }
+    .contact-form h3 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .contact-form .sub-text {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-bottom: 32px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid rgba(60,74,58,0.2);
+      border-radius: var(--radius);
+      background: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--text);
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blush); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-submit { width: 100%; padding: 15px; margin-top: 8px; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--forest);
+      padding: 64px 0 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo-mark {
+      width: 52px;
+      height: 52px;
+      border: 2px solid var(--blush);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .footer-brand .brand-name {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--white);
+    }
+    .footer-brand .brand-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-top: 2px;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      max-width: 240px;
+    }
+    .footer-col h4 {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blush);
+      margin-bottom: 20px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-bottom p {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-bottom .tagline {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── Mobile Menu ── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 99;
+      padding: 100px 32px 48px;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.5rem;
+      font-family: var(--font-heading);
+      color: var(--forest);
+      border-bottom: 1px solid rgba(60,74,58,0.1);
+      padding-bottom: 16px;
+    }
+    .mobile-menu a:hover { color: var(--blush); }
+    .mobile-menu .btn { text-align: center; margin-top: 8px; width: 100%; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-content { padding: 140px 32px 64px; }
+      .hero-image { height: 400px; position: relative; }
+      .hero-image-inner { position: absolute; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-img-accent { display: none; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .founding-inner { grid-template-columns: 1fr; }
+      .founding-image { height: 360px; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .values-list { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .values-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.5rem; }
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      animation: fadeUp 0.6s ease both;
+    }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.2s; }
+    .fade-up-d3 { animation-delay: 0.3s; }
+    .fade-up-d4 { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">
+        <div class="logo-mark">M</div>
+        <div class="logo-text">
+          <span class="brand">METTLE</span>
+          <span class="sub">Fitness Club UK</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#offer">What We Offer</a>
+        <a href="#values">Our Values</a>
+        <a href="#founding">Founding Members</a>
+        <a href="#contact">Contact</a>
+        <a href="#founding" class="btn btn-primary">Join Now</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Mobile Menu ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#offer" onclick="toggleMenu()">What We Offer</a>
+  <a href="#values" onclick="toggleMenu()">Our Values</a>
+  <a href="#founding" onclick="toggleMenu()">Founding Members</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#founding" class="btn btn-primary" onclick="toggleMenu()">Join Now</a>
+</div>
+
+<!-- ── Hero ── -->
+<section class="hero" id="home">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content fade-up">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span>Solihull, UK &nbsp;·&nbsp; Women 40+</span>
+    </div>
+    <h1>
+      Strength.<br>
+      Energy.<br>
+      Confidence.
+      <em>At every stage.</em>
+    </h1>
+    <p class="hero-sub">Outdoor strength &amp; wellness for women 40+</p>
+    <div class="hero-ctas">
+      <a href="#founding" class="btn btn-primary">Claim Your Founding Place</a>
+      <a href="#about" class="btn btn-outline">Discover More</a>
+    </div>
+    <p class="hero-tagline">Stronger. Together. Every Day.</p>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-inner"></div>
+    <div class="hero-image-badge">
+      <span class="heart">♥</span>
+      <span>Women Supporting Women</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ── -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-number">20</div>
+        <div class="stat-label">Founding Places Only</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">40+</div>
+        <div class="stat-label">Women in Midlife</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Week Commitment</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Outdoor &amp; Community</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── About ── -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images">
+        <div class="about-img-main"></div>
+        <div class="about-img-accent"></div>
+        <svg class="leaf-deco" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 10 C20 30 10 60 20 90 C30 60 60 40 70 20 C55 15 45 12 40 10Z" fill="#3C4A3A"/>
+          <line x1="40" y1="10" x2="20" y2="90" stroke="#3C4A3A" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="about-text">
+        <p class="section-label">About the Club</p>
+        <h2 class="section-title">You don't have to do this <em>alone.</em></h2>
+        <div class="divider"></div>
+        <p>Mettle Fitness Club UK is an outdoor fitness and wellness community designed for women in perimenopause, menopause and beyond.</p>
+        <p>We focus on building strength, boosting energy and supporting hormonal health in a safe, supportive and encouraging environment — where every woman is celebrated at every stage of her journey.</p>
+        <p class="about-quote">You've got Mettle.</p>
+        <p class="about-cta-text">Stronger. Together. Every Day.</p>
+        <div class="values-list">
+          <div class="value-chip"><span class="heart">♥</span> Strength</div>
+          <div class="value-chip"><span class="heart">♥</span> Community</div>
+          <div class="value-chip"><span class="heart">♥</span> Empowerment</div>
+          <div class="value-chip"><span class="heart">♥</span> Wellness</div>
+        </div>
+        <br/>
+        <a href="#founding" class="btn btn-forest" style="margin-top:16px;">Join the Club</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── What We Offer ── -->
+<section class="offer" id="offer">
+  <div class="container">
+    <div class="offer-header">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Everything you need to <em>thrive.</em></h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <div class="offer-icon">🏋️</div>
+        <div>
+          <h3>Strength Training</h3>
+          <p>Improve strength, mobility and bone health with progressive sessions designed for women in midlife. Build the foundations for a strong, capable body.</p>
+        </div>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">💙</div>
+        <div>
+          <h3>Hormone-Smart Approach</h3>
+          <p>Training that supports your body through midlife. Every programme is thoughtfully structured around hormonal health so you work with your body, not against it.</p>
+        </div>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">👯</div>
+        <div>
+          <h3>Supportive Community</h3>
+          <p>A welcoming space to connect, motivate and thrive. You'll be surrounded by women who get it — because they're living it too.</p>
+        </div>
+      </div>
+      <div class="offer-card">
+        <div class="offer-icon">🌿</div>
+        <div>
+          <h3>Outdoor Wellness</h3>
+          <p>Fresh air, natural surroundings and better mental health. Our outdoor sessions harness the power of nature to lift your mood and energise your body.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Our Values ── -->
+<section class="values" id="values">
+  <div class="container">
+    <div class="values-header">
+      <p class="section-label" style="color:var(--blush);">Our Values</p>
+      <h2 class="section-title">What we stand for.</h2>
+      <div class="divider" style="margin:16px auto 0;background:rgba(255,255,255,0.2);"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-heart">♥</div>
+        <h3>Strength</h3>
+        <p>We build strong bodies and strong minds. Physical strength and mental resilience grow together here.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-heart">♥</div>
+        <h3>Community</h3>
+        <p>We show up for each other. This is a place of genuine connection, encouragement and belonging.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-heart">♥</div>
+        <h3>Empowerment</h3>
+        <p>We help you feel capable, confident and unstoppable — at 40, 50, 60 and beyond.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-heart">♥</div>
+        <h3>Wellness</h3>
+        <p>We support your physical and mental wellbeing as a whole — because true health is about so much more than fitness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Founding Members ── -->
+<section class="founding" id="founding">
+  <div class="container">
+    <div class="founding-inner">
+      <div class="founding-offer-box">
+        <p class="founding-script">Founding Members</p>
+        <h2 class="founding-heading">OFFER</h2>
+        <div class="founding-badge">Limited Spaces!</div>
+        <ul class="founding-checklist">
+          <li>
+            <div class="check-icon">✓</div>
+            20 Places Only
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            Special Founding Price
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            6-Week Commitment
+          </li>
+          <li>
+            <div class="check-icon">✓</div>
+            Be Part of the Foundation of Something Amazing
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%;text-align:center;display:block;">Secure My Place Today</a>
+        <p class="founding-cta-text">Stronger Together · Join Mettle Fitness Club UK Today</p>
+      </div>
+      <div class="founding-content">
+        <p class="section-label">Why Join Now?</p>
+        <h2 class="section-title">Be part of the foundation of something <em>amazing.</em></h2>
+        <div class="divider"></div>
+        <p style="color:var(--text-light);font-size:0.92rem;margin-bottom:20px;">Founding members get the best price we'll ever offer — a thank you for believing in Mettle from the very beginning. This isn't just a fitness club. It's a movement for women who are done being overlooked, underestimated, and left behind.</p>
+        <p style="color:var(--text-light);font-size:0.92rem;margin-bottom:20px;">With only 20 places available, this is your chance to be one of the women who helped build something extraordinary. Your journey to strength, energy and confidence starts here.</p>
+        <blockquote style="border-left:3px solid var(--blush);padding-left:20px;margin-top:32px;">
+          <p style="font-family:var(--font-script);font-size:1.5rem;color:var(--blush);line-height:1.3;">Stronger Together.<br><span style="font-size:1rem;">Better Every Day.</span></p>
+        </blockquote>
+        <div class="founding-image" style="margin-top:40px;height:260px;">
+          <div class="founding-image-overlay"></div>
+          <div class="founding-image-text">
+            <p>Outdoor strength training<br>for women who mean business.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Testimonials ── -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <p class="section-label">What Our Members Say</p>
+      <h2 class="section-title">Real women. Real <em>results.</em></h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I joined Mettle not knowing what to expect at 47 and going through perimenopause. The difference in just six weeks has been incredible — more energy, stronger, and I've found a group of women who just get it."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-detail">Founding Member · Age 47</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I've tried so many fitness programmes over the years, but nothing has felt as right as this. Training outdoors with other women in the same stage of life is genuinely life-changing. I feel like myself again."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">Julie K.</div>
+            <div class="testimonial-detail">Member · Age 52</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The hormone-smart approach changed everything for me. For the first time I understand how to train with my body rather than against it. Plus the community here is the most supportive group I've ever been part of."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">R</div>
+          <div>
+            <div class="testimonial-name">Rachel T.</div>
+            <div class="testimonial-detail">Member · Age 44</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-header">
+      <p class="section-label">Questions</p>
+      <h2 class="section-title">Everything you need to <em>know.</em></h2>
+      <div class="divider" style="margin:16px auto 0;"></div>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h4>Do I need to be fit to join?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <p class="faq-answer">Absolutely not. Mettle is designed for women at every fitness level. Our coaches will tailor every session to meet you where you are and progress at a pace that works for your body.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h4>What does 'outdoor' training mean?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <p class="faq-answer">We train in beautiful outdoor locations around Solihull. Fresh air and natural settings are a core part of the Mettle experience — proven to improve mood, reduce stress and boost motivation.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h4>Is this suitable for menopause symptoms?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <p class="faq-answer">Yes — our hormone-smart approach is specifically designed to support women through perimenopause and menopause. Training in the right way can significantly ease symptoms and improve quality of life.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h4>What is the Founding Members offer?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <p class="faq-answer">Founding members get a special discounted price that will never be offered again — in exchange for a 6-week commitment and helping shape what Mettle becomes. Only 20 places are available.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h4>Where are sessions held?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <p class="faq-answer">Sessions are held in and around Solihull, UK. Exact locations are shared with members upon joining. We always choose accessible, welcoming outdoor spots.</p>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question">
+          <h4>What do I need to bring?</h4>
+          <div class="faq-toggle">+</div>
+        </div>
+        <p class="faq-answer">Just yourself, comfortable outdoor clothing and a water bottle. We provide all equipment. No experience required — just an open mind and the willingness to show up for yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Banner ── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner-inner">
+      <p class="script">You've got Mettle.</p>
+      <h2>Ready to transform your life?</h2>
+      <p>Join the 20 founding women who will build something extraordinary together. Don't miss your chance at this special founding price.</p>
+      <div class="cta-banner-btns">
+        <a href="#contact" class="btn btn-primary">Claim Your Founding Place</a>
+        <a href="#offer" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-label">Get in Touch</p>
+        <h2>Let's start your journey.</h2>
+        <div class="divider"></div>
+        <p>Ready to take the first step? We'd love to hear from you. Fill in the form, drop us an email, or find us on Instagram — we're a friendly bunch and there are no silly questions.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="label">Location</div>
+              <span>Solihull, UK</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-item-text">
+              <div class="label">Email</div>
+              <a href="mailto:hello@mettlefitnessclub.co.uk">hello@mettlefitnessclub.co.uk</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📸</div>
+            <div class="contact-item-text">
+              <div class="label">Instagram</div>
+              <a href="https://instagram.com/mettlefitnessclubuk" target="_blank" rel="noopener">@mettlefitnessclubuk</a>
+            </div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="https://instagram.com/mettlefitnessclubuk" target="_blank" rel="noopener" class="social-btn">
+            <span>📸</span> Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Secure Your Place</h3>
+        <p class="sub-text">20 founding places only — complete the form and we'll be in touch within 24 hours.</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name" placeholder="Your first name" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name" placeholder="Your last name" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="hello@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="age">Age Range</label>
+            <select id="age" name="age">
+              <option value="">Select your age range</option>
+              <option value="40-44">40–44</option>
+              <option value="45-49">45–49</option>
+              <option value="50-54">50–54</option>
+              <option value="55-59">55–59</option>
+              <option value="60+">60+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="stage">Current Stage</label>
+            <select id="stage" name="stage">
+              <option value="">Select your current stage</option>
+              <option value="perimenopause">Perimenopause</option>
+              <option value="menopause">Menopause</option>
+              <option value="post-menopause">Post-menopause</option>
+              <option value="prefer-not">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Anything you'd like us to know?</label>
+            <textarea id="message" name="message" placeholder="Tell us about your goals or any questions you have…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Claim My Founding Place</button>
+        </form>
+        <div id="form-success" style="display:none;margin-top:16px;padding:16px;background:rgba(60,74,58,0.08);border-radius:var(--radius);text-align:center;">
+          <p style="color:var(--forest);font-weight:600;font-size:0.88rem;">Thank you! We'll be in touch within 24 hours. You've got Mettle! 💚</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-mark">M</div>
+        <div class="brand-name">METTLE</div>
+        <div class="brand-sub">Fitness Club UK</div>
+        <p>Outdoor strength &amp; wellness for women 40+. Building stronger bodies and stronger minds, together.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#offer">What We Offer</a></li>
+          <li><a href="#values">Our Values</a></li>
+          <li><a href="#founding">Founding Members</a></li>
+          <li><a href="#testimonials">Member Stories</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="#founding">Founding Member Offer</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="https://instagram.com/mettlefitnessclubuk" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@mettlefitnessclub.co.uk">hello@mettlefitnessclub.co.uk</a></li>
+          <li><a href="#">Solihull, UK</a></li>
+          <li><a href="https://instagram.com/mettlefitnessclubuk" target="_blank" rel="noopener">@mettlefitnessclubuk</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Mettle Fitness Club UK. All rights reserved.</p>
+      <p class="tagline">Stronger. Together. Every Day.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Mobile Menu ──
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // ── Sticky Nav shadow ──
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.boxShadow = window.scrollY > 40
+      ? '0 2px 20px rgba(60,74,58,0.1)'
+      : 'none';
+  });
+
+  // ── FAQ Toggle ──
+  function toggleFaq(item) {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // ── Form Submit ──
+  function handleSubmit(e) {
+    e.preventDefault();
+    e.target.style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+
+  // ── Smooth scroll for all anchor links ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ── Intersection Observer for fade-up ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.offer-card, .value-card, .testimonial-card, .stat-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
