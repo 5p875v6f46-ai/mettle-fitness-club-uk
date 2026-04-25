@@ -121,9 +121,10 @@
       gap: 10px;
     }
     .nav-logo .logo-mark {
-      width: 52px;
-      height: 52px;
+      width: 56px;
+      height: 56px;
       flex-shrink: 0;
+      object-fit: contain;
     }
     .nav-logo .logo-text {
       display: flex;
@@ -934,9 +935,11 @@
       margin-bottom: 48px;
     }
     .footer-brand .logo-mark {
-      width: 64px;
-      height: 64px;
+      width: 72px;
+      height: 72px;
       margin-bottom: 12px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
     }
     .footer-brand .brand-name {
       font-family: var(--font-heading);
@@ -1075,34 +1078,7 @@
   <div class="container">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">
-        <svg class="logo-mark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Outer ring - breaks at top for sprig to sit over it -->
-          <path d="M60 14 A46 46 0 1 1 59.9 14" stroke="#E7A28F" stroke-width="1.8" stroke-linecap="round"/>
-          <!-- Central stem -->
-          <line x1="60" y1="3" x2="60" y2="22" stroke="#3C4A3A" stroke-width="1.2" stroke-linecap="round"/>
-          <!-- Top centre leaf -->
-          <ellipse cx="60" cy="2" rx="3" ry="5" fill="#3C4A3A" transform="rotate(0,60,2)"/>
-          <!-- Left branch upper -->
-          <line x1="60" y1="8" x2="51" y2="4" stroke="#3C4A3A" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="49" cy="3" rx="4.5" ry="2.5" fill="#3C4A3A" transform="rotate(-30,49,3)"/>
-          <!-- Left branch lower -->
-          <line x1="60" y1="13" x2="49" y2="9" stroke="#3C4A3A" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="47" cy="8" rx="4.5" ry="2.5" fill="#3C4A3A" transform="rotate(-25,47,8)"/>
-          <!-- Left branch lowest -->
-          <line x1="60" y1="17" x2="51" y2="15" stroke="#3C4A3A" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="48" cy="14" rx="4" ry="2" fill="#3C4A3A" transform="rotate(-15,48,14)"/>
-          <!-- Right branch upper -->
-          <line x1="60" y1="8" x2="69" y2="4" stroke="#3C4A3A" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="71" cy="3" rx="4.5" ry="2.5" fill="#3C4A3A" transform="rotate(30,71,3)"/>
-          <!-- Right branch lower -->
-          <line x1="60" y1="13" x2="71" y2="9" stroke="#3C4A3A" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="73" cy="8" rx="4.5" ry="2.5" fill="#3C4A3A" transform="rotate(25,73,8)"/>
-          <!-- Right branch lowest -->
-          <line x1="60" y1="17" x2="69" y2="15" stroke="#3C4A3A" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="72" cy="14" rx="4" ry="2" fill="#3C4A3A" transform="rotate(15,72,14)"/>
-          <!-- M letter -->
-          <text x="60" y="82" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" fill="#3C4A3A">M</text>
-        </svg>
+        <img class="logo-mark" src="logo.png" alt="Mettle Fitness Club UK logo" />
         <div class="logo-text">
           <span class="brand">METTLE</span>
           <span class="sub">Fitness Club UK</span>
@@ -1556,24 +1532,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <svg class="logo-mark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M60 14 A46 46 0 1 1 59.9 14" stroke="#E7A28F" stroke-width="1.8" stroke-linecap="round"/>
-          <line x1="60" y1="3" x2="60" y2="22" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round"/>
-          <ellipse cx="60" cy="2" rx="3" ry="5" fill="#ffffff" transform="rotate(0,60,2)"/>
-          <line x1="60" y1="8" x2="51" y2="4" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="49" cy="3" rx="4.5" ry="2.5" fill="#ffffff" transform="rotate(-30,49,3)"/>
-          <line x1="60" y1="13" x2="49" y2="9" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="47" cy="8" rx="4.5" ry="2.5" fill="#ffffff" transform="rotate(-25,47,8)"/>
-          <line x1="60" y1="17" x2="51" y2="15" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="48" cy="14" rx="4" ry="2" fill="#ffffff" transform="rotate(-15,48,14)"/>
-          <line x1="60" y1="8" x2="69" y2="4" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="71" cy="3" rx="4.5" ry="2.5" fill="#ffffff" transform="rotate(30,71,3)"/>
-          <line x1="60" y1="13" x2="71" y2="9" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="73" cy="8" rx="4.5" ry="2.5" fill="#ffffff" transform="rotate(25,73,8)"/>
-          <line x1="60" y1="17" x2="69" y2="15" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="72" cy="14" rx="4" ry="2" fill="#ffffff" transform="rotate(15,72,14)"/>
-          <text x="60" y="82" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700" fill="#ffffff">M</text>
-        </svg>
+        <img class="logo-mark" src="logo.png" alt="Mettle Fitness Club UK logo" />
         <div class="brand-name">METTLE</div>
         <div class="brand-sub">Fitness Club UK</div>
         <p>Outdoor strength &amp; wellness for women 40+. Building stronger bodies and stronger minds, together.</p>
