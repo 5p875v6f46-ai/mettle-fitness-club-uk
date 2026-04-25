@@ -121,18 +121,9 @@
       gap: 10px;
     }
     .nav-logo .logo-mark {
-      width: 44px;
-      height: 44px;
-      border: 2px solid var(--blush);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--forest);
-      position: relative;
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
     }
     .nav-logo .logo-text {
       display: flex;
@@ -943,17 +934,8 @@
       margin-bottom: 48px;
     }
     .footer-brand .logo-mark {
-      width: 52px;
-      height: 52px;
-      border: 2px solid var(--blush);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-heading);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--white);
+      width: 64px;
+      height: 64px;
       margin-bottom: 12px;
     }
     .footer-brand .brand-name {
@@ -1093,7 +1075,22 @@
   <div class="container">
     <div class="nav-inner">
       <a href="#home" class="nav-logo">
-        <div class="logo-mark">M</div>
+        <svg class="logo-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer ring -->
+          <circle cx="50" cy="50" r="46" stroke="#E7A28F" stroke-width="2"/>
+          <!-- Leaf sprig left -->
+          <path d="M50 18 C46 12 38 10 36 15 C40 14 46 18 50 18Z" fill="#3C4A3A"/>
+          <path d="M50 18 C48 11 42 7 38 10 C42 11 47 15 50 18Z" fill="#3C4A3A"/>
+          <!-- Leaf sprig right -->
+          <path d="M50 18 C54 12 62 10 64 15 C60 14 54 18 50 18Z" fill="#3C4A3A"/>
+          <path d="M50 18 C52 11 58 7 62 10 C58 11 53 15 50 18Z" fill="#3C4A3A"/>
+          <!-- Small centre leaf tip -->
+          <path d="M50 10 C49 7 50 4 50 4 C50 4 51 7 50 10Z" fill="#3C4A3A"/>
+          <!-- Stem -->
+          <line x1="50" y1="18" x2="50" y2="26" stroke="#3C4A3A" stroke-width="1.2"/>
+          <!-- M letter -->
+          <text x="50" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#3C4A3A">M</text>
+        </svg>
         <div class="logo-text">
           <span class="brand">METTLE</span>
           <span class="sub">Fitness Club UK</span>
@@ -1547,7 +1544,16 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="logo-mark">M</div>
+        <svg class="logo-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="46" stroke="#E7A28F" stroke-width="2"/>
+          <path d="M50 18 C46 12 38 10 36 15 C40 14 46 18 50 18Z" fill="#ffffff"/>
+          <path d="M50 18 C48 11 42 7 38 10 C42 11 47 15 50 18Z" fill="#ffffff"/>
+          <path d="M50 18 C54 12 62 10 64 15 C60 14 54 18 50 18Z" fill="#ffffff"/>
+          <path d="M50 18 C52 11 58 7 62 10 C58 11 53 15 50 18Z" fill="#ffffff"/>
+          <path d="M50 10 C49 7 50 4 50 4 C50 4 51 7 50 10Z" fill="#ffffff"/>
+          <line x1="50" y1="18" x2="50" y2="26" stroke="#ffffff" stroke-width="1.2"/>
+          <text x="50" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#ffffff">M</text>
+        </svg>
         <div class="brand-name">METTLE</div>
         <div class="brand-sub">Fitness Club UK</div>
         <p>Outdoor strength &amp; wellness for women 40+. Building stronger bodies and stronger minds, together.</p>
